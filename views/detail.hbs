@@ -1,0 +1,12 @@
+<form action="/todos/{{ todo.id }}?_method=DELETE" method="post" style="display: inline;">
+  <div class="container mx-auto">
+    <div class="input-group">
+      <div class="input-group-text">
+        <input class="form-check-input mt-0" type="checkbox" name="isDone" {{#if todo.isDone}} checked {{/if}} disabled>
+      </div>
+      <input class="form-control" type="text" placeholder="name" name="name" value="{{ todo.name }}" disabled>
+      <a class="btn btn-success" href="/todos/{{ todo.id }}/edit">edit</a>
+      <button class="btn btn-danger" type="submit">delete</button>
+    </div>
+  </div>
+</form>
