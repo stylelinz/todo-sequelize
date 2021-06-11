@@ -5,8 +5,10 @@ const db = require('../../models')
 const Todo = db.todo
 
 router.get('/', async (req, res) => {
+  const { id: UserId } = req.user
   try {
     const todos = await Todo.findAll({
+      where: { UserId },
       raw: true,
       nest: true
     })
