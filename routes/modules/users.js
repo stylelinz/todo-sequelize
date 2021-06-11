@@ -36,7 +36,7 @@ router.post('/register', async (req, res) => {
       email,
       password: hash
     })
-    return res.redirect('/')
+    return res.redirect('/users/login')
   } catch (error) {
     console.error(error)
     return res.status(400).render('register', {

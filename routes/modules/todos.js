@@ -7,6 +7,19 @@ const {
   User
 } = db
 
+router.get('/new', (req, res) => {
+  return res.render('new')
+})
+
+router.post('/', async (req, res) => {
+  const { name } = req.body
+  try {
+
+  } catch (error) {
+    return res.status(400).render('new', { name })
+  }
+})
+
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
